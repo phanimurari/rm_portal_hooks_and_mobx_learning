@@ -1,0 +1,43 @@
+[
+    {
+        "resource_id": 1,
+        "resource_name": "Mac Laptop",
+        "rp": "phani",
+        "team": "Query Resolution",
+        "using_form_date": "01-10-2022"
+    },
+    {   "resource_id": 2,
+        "resource_name": "Mobile",
+        "rp": "Vamsi",
+        "team": "Query Resolution",
+        "using_form_date": "01-10-2022"
+    },
+    {
+        "resource_id": 3,
+        "resource_name": "Car",
+        "rp": "Dinesh",
+        "team": "Learning Platform - Dev",
+        "using_form_date": "01-11-2022"
+    },
+       {
+        "resource_id": 4,
+        "resource_name": "RX 100 Bike",
+        "rp": "Kv",
+        "team": "Learning Platform - Dev",
+        "using_form_date": "01-11-2022"
+    },
+       {
+        "resource_id": 5,
+        "resource_name": "Activa",
+        "rp": "Maneesh",
+        "team": "Query Resolution Team",
+        "using_form_date": "01-11-2022"
+    },
+    {
+        "resource_id": 5,
+        "resource_name": "Bullet",
+        "rp": "Srikanth",
+        "team": "Pinscale",
+        "using_form_date": "01-11-2022"
+    }
+]
