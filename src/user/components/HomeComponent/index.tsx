@@ -7,7 +7,7 @@ import ReactPopUp from "../ReactPopUp"
 interface homeComponentPropTypes {
     listOfResources: Array<resourceItemType>
     numberOfResourceItems: number
-    addResourceItem: () => void
+    addResourceItem: (resource: resourceItemType) => void
     onDeleteResourceItem:(resourceItemId : number) => void
 }
 

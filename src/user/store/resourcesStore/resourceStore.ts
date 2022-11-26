@@ -24,6 +24,9 @@ class ResourceStore {
     }
 
     addResourcesToList = (resource: any) => {
+
+        console.log("in store")
+
         this.listOfResources = [...this.listOfResources, resource]
     }
 
