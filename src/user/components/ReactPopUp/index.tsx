@@ -61,7 +61,7 @@ const onChangeTeamName = (event: React.ChangeEvent<HTMLInputElement>) => {
         "resource_name": resourceName,
         "rp": rpName,
         "team": teamName,
-        "using_form_date": format(new Date(), "dd-mm-yyyy")
+        "using_form_date": format(new Date(), "MM/dd/yyyy")
         }
       await addResourceItem(addedResourceItem)
       setResourceName('')
