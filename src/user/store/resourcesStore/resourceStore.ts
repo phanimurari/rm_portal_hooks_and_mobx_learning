@@ -11,14 +11,25 @@ class ResourceStore {
         makeAutoObservable(this, {
             listOfResources: observable,
             newResourceItem: observable,
-            addResourcesToList : action
+            addResourcesToList: action,
+            deleteResourceItemFromList: action,
+            numberOfResourceItems: computed
         })
         this.listOfResources = [...listOfResources]
         this.newResourceItem = {}
     }
 
+    get numberOfResourceItems () {
+        return this.listOfResources.length
+    }
+
     addResourcesToList = (resource: any) => {
         this.listOfResources = [...this.listOfResources, resource]
+    }
+
+    deleteResourceItemFromList = (resourceItemId: number) => {
+        const updatedResourceItemsList = this.listOfResources.filter(resourceItem => resourceItem.resource_id !== resourceItemId)
+        this.listOfResources = [...updatedResourceItemsList]
     }
 
 }

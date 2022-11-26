@@ -29,13 +29,17 @@ const rows = [
 
 interface tablePropTypes {
     listOfResources: Array<resourceItemType>;
+    onDeleteResourceItem : (resourceItemId: number) => void
 }
 
 
 
 const ResourceItemsTable = (props: tablePropTypes) => {
     
-    const { listOfResources } = props
+    const { listOfResources , onDeleteResourceItem} = props
+
+  
+    
     
     return <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -49,20 +53,24 @@ const ResourceItemsTable = (props: tablePropTypes) => {
                 </TableRow>
             </TableHead>
             <TableBody>
-                {listOfResources.map((resourceItem) => (
-                    <TableRow
+                {listOfResources.map((resourceItem) => {
+                
+                    const deleteResourceItem = () => onDeleteResourceItem(resourceItem.resource_id)
+                    
+                    return <TableRow
                         key={resourceItem.resource_id}
                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                     >
-                        <TableCell component="th" scope="row">
+                        <TableCell component="th" scope="row" >
                             {resourceItem.resource_id}
                         </TableCell>
                         <TableCell align="left">{resourceItem.resource_name}</TableCell>
                         <TableCell align="left">{resourceItem.rp}</TableCell>
                         <TableCell align="left">{resourceItem.team}</TableCell>
                         <TableCell align="left">{resourceItem.using_form_date}</TableCell>
+                        <TableCell align="left"><button type="button" onClick={deleteResourceItem}>Delete</button></TableCell>
                     </TableRow>
-                ))}
+                })}
             </TableBody>
         </Table>
     </TableContainer>

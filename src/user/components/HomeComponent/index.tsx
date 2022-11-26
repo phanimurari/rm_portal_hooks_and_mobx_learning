@@ -4,14 +4,16 @@ import { StyledResourceHomePageContainer, StyledResourceHomePageMainContainer } 
 import ResourceItemsTable from "../ResourceItemsTable"
 
 interface homeComponentPropTypes {
-    listOfResources: Array<resourceItemType>;
+    listOfResources: Array<resourceItemType>
+    numberOfResourceItems: number
     addResourceItem: () => void
+    onDeleteResourceItem:(resourceItemId : number) => void
 }
 
 
 const HomeComponent = (props: homeComponentPropTypes) => {
     
-    const { listOfResources, addResourceItem } = props
+    const { listOfResources, addResourceItem, onDeleteResourceItem, numberOfResourceItems  } = props
     
     const resultListOfResources  = toJS(listOfResources)
 
@@ -25,10 +27,10 @@ const HomeComponent = (props: homeComponentPropTypes) => {
 
     return <StyledResourceHomePageContainer>
         {renderListOfResourceItems()}
-        <ResourceItemsTable listOfResources={listOfResources}/>
+        <h3>Number of Resources Items : {numberOfResourceItems}</h3>
+        <ResourceItemsTable listOfResources={listOfResources} onDeleteResourceItem={onDeleteResourceItem}/>
     </StyledResourceHomePageContainer>
-    
-    
+
 }
 
 export default HomeComponent

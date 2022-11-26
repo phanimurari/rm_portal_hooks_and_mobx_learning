@@ -8,15 +8,20 @@ const Home = observer( () => {
 
     const [resourcesListStore] = useState(new ResourceStore())
 
-    const { listOfResources } =resourcesListStore
+    const { listOfResources, deleteResourceItemFromList, numberOfResourceItems} =resourcesListStore
 
 
     const addResourceItem = () => {
         console.log("on click resource item")
     }
 
+
+    const onDeleteResourceItem = (resourceItemId: any) => {
+       deleteResourceItemFromList(resourceItemId)
+    }
+
     return <div>
-        <HomeComponent listOfResources={listOfResources} addResourceItem={addResourceItem}/>
+        <HomeComponent listOfResources={listOfResources} addResourceItem={addResourceItem} onDeleteResourceItem={onDeleteResourceItem} numberOfResourceItems={numberOfResourceItems}/>
     </div>
 
 })
