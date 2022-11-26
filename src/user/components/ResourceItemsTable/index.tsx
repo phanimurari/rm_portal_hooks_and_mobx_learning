@@ -68,7 +68,7 @@ const ResourceItemsTable = (props: tablePropTypes) => {
                         <TableCell align="left">{resourceItem.rp}</TableCell>
                         <TableCell align="left">{resourceItem.team}</TableCell>
                         <TableCell align="left">{resourceItem.using_form_date}</TableCell>
-                        <TableCell align="left"><button type="button" onClick={deleteResourceItem}>Delete</button></TableCell>
+                        <TableCell align="left"><button type="button" onClick={deleteResourceItem}>Revoke Access</button></TableCell>
                     </TableRow>
                 })}
             </TableBody>

@@ -2,6 +2,7 @@ import { resourceItemType } from "../../store/types"
 import { toJS } from 'mobx'
 import { StyledResourceHomePageContainer, StyledResourceHomePageMainContainer } from "./styledComponents"
 import ResourceItemsTable from "../ResourceItemsTable"
+import ReactPopUp from "../ReactPopUp"
 
 interface homeComponentPropTypes {
     listOfResources: Array<resourceItemType>
@@ -21,8 +22,8 @@ const HomeComponent = (props: homeComponentPropTypes) => {
     const renderListOfResourceItems = () => {
         return <StyledResourceHomePageMainContainer>
             <h1>Resource Management Portal</h1>
-            <button onClick={addResourceItem}>Add Resource</button>
-            </StyledResourceHomePageMainContainer>
+            <ReactPopUp addResourceItem={addResourceItem}/>
+        </StyledResourceHomePageMainContainer>
     }
 
     return <StyledResourceHomePageContainer>
